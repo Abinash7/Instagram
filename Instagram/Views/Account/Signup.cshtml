@@ -1,0 +1,107 @@
+﻿@model Instagram.Models.UserDB
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Signup</title>
+    <style>
+        a{
+            padding-left:7px;            
+        }
+    </style>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background-color:ghostwhite">
+    <div style="border:solid; border-color:lightgray ; width:300px; margin:20px auto auto 500px; text-align:center; padding-left:20px; padding-right:20px; padding-top:10px; visibility:unset">
+        <h1 style="font-family:'Vladimir Script';"><b>Instagram</b></h1>
+
+        <p style="font-size:medium; color:darkgray">Sign up to see photos and videos from your people.</p>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="font-family:'Times New Roman'; font-size:small">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group" style="font-size:smaller">
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email or Mobile Number" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Fullname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Fullname" } })
+                        @Html.ValidationMessageFor(model => model.Fullname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-12">
+                        <input type="submit" value="Sign up " class="btn btn-primary"/>
+                    </div>
+                </div>
+
+                <div>
+                    <p style="color:lightgray">
+                        By Signing Up, you agree to our
+                        <br />
+                        <b style="color:darkgray">Terms , Data Policy</b> and <b style="color:darkgray">Cookies Policy</b>
+                    </p>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div style="border:solid; border-color:lightgray ; width:300px; margin:20px auto auto 500px; text-align:center; padding:10px 20px 0px 20px ">
+        <p style="font-size:14px">Have an account? <a href="~/Views/Account/Login.cshtml">Log in</a></p>
+    </div>
+
+    <div style=" width:300px; margin:20px auto auto 500px; text-align:center; padding:10px 20px 0px 20px ">
+        <p style="font-size:14px">Get the app.</p>
+    </div>
+    <div style=" width:300px; margin:20px auto auto 500px; text-align:center; padding:10px 20px 0px 20px ">
+        <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo"><img src="~/Images/1.png" height="40" width="120"/></a>
+        <span><a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DsignupPage%26ig_mid%3DXMRBGAALAAH859BNHLB8Z_YDGJQ8%26utm_content%3Dlo%26utm_medium%3Dbadge"><img src="~/Images/2.png" height="40" width="120" /></a></span>
+    </div>
+
+    <div style="text-decoration:none !important; margin:20px 150px 20px 150px;" >
+        <span><a href="https://www.instagram.com/about/us/">About us</a></span>
+        <span><a href="https://help.instagram.com">Support</a></span>
+        <span><a href="https://instagram-press.com/">Press</a></span>
+        <span><a href="https://www.instagram.com/developer/">API</a></span>
+        <span><a href="https://www.instagram.com/about/jobs/">Jobs</a></span>
+        <span><a href="https://www.instagram.com/legal/privacy/">Privacy</a></span>
+        <span><a href="https://www.instagram.com/legal/terms/">Terms</a></span>
+        <span><a href="https://www.instagram.com/explore/locations/">Directory</a></span>
+        <span><a href="https://www.instagram.com/directory/profiles/">Profiles</a></span>
+        <span><a href="https://www.instagram.com/directory/hashtags/">Hashtags</a></span>
+        <span style="padding-left:150px">copyright trademark</span>
+    </div>
+</body>
+</html>
